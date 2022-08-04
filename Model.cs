@@ -22,11 +22,15 @@ namespace EFPersonDetails
     }
     public class Person
     {
+        public Person()
+        {
+            Ads = new List<Address>();
+        }
         public int PersonId { get; set; }
         public int SocialSecurityNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Address Address { get; set; }
+        public List<Address> Ads { get; } 
     }
     public class Address
     {
@@ -35,5 +39,6 @@ namespace EFPersonDetails
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
+        public Person Person { get; set; }
     }
 }
